@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    url: 'http://localhost:3000',
+    url: 'https://backend-247burger.onrender.com/',
     id_tienda: '64c68843533be3fea571a2b5'
 };
