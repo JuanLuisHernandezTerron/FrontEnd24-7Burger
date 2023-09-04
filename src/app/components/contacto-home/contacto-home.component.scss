@@ -1,0 +1,29 @@
+.material-icons{
+    font-family: 'Material Icons' !important;
+}
+
+.burger{
+    background-color: #CEA174;
+    &-formulario{
+        width: 100%;
+        @media (min-width: 992px) {
+            width: 25%;
+        }
+    }
+    &-realizapedido{
+        color: #CEA174;
+        background-color: black;
+        border: 2px solid #CEA174;
+        border-radius: 10px;
+        font-size:x-large;
+        &:hover{
+            background-color: #CEA174;
+            border-color: black;
+            color: black;
+        }
+    }
+}
+
+h1{
+    font-size: 35px;
+}

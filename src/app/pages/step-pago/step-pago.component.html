@@ -1,0 +1,148 @@
+<div class="container-fluid pago ">
+    <h4 class="text-center py-5">Proceso pago</h4>
+    <div class="row">
+        <div class="mb-5 col-12 col-lg-6 gx-5 align-items-center">
+            <div class="col-10 mx-auto">
+
+                <mat-accordion class="example-headers-align" multi>
+    
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <mat-checkbox color="primary" class="example-margin" [disabled]="true"
+                                    [checked]="checkeado"></mat-checkbox>
+    
+                                <label for="datos">Datos cliente</label>
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Introduce sus datos de contacto
+                                <mat-icon>account_circle</mat-icon>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div>
+                            <form [formGroup]="datosCliente">
+                                    <div class="row  gx-5  mt-3">
+                                    <mat-form-field class="col-12">
+                                        <mat-label>Nombre y apellidos</mat-label>
+                                        <input matInput placeholder="Nombre y apellido" formControlName="nombre">
+                                    </mat-form-field>
+                                    <mat-form-field class="col-12 col-lg-6 ">
+                                        <mat-label>Teléfono de contacto</mat-label>
+                                        <span matPrefix class="ms-1">+34 &nbsp;</span>
+                                        <input matInput placeholder="Teléfono de contacto" formControlName="phone">
+                                        <mat-icon matSuffix>phone</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field class="col-12 col-lg-6 ">
+                                        <mat-label>DNI</mat-label>
+                                        <input matInput placeholder="12345678Z" formControlName="dni">
+                                    </mat-form-field>
+    
+                                </div>
+                                </form>
+    
+                            <ng-container *ngIf="checkeado; else desactivado">
+                                <div class="row  gx-5 ">
+                                    <form [formGroup]="direccionForm">
+                                    <mat-form-field class="col-12">
+                                        <mat-label>Dirección</mat-label>
+                                        <input matInput placeholder="direccion" formControlName="direccion">
+                                    </mat-form-field>
+                                    <mat-form-field class="col-12 col-lg-6 ">
+                                        <mat-label>Código postal</mat-label>
+                                        <input matInput placeholder="00000" formControlName="cp">
+                                    </mat-form-field>
+                                </form>
+                                </div>
+                            </ng-container>
+                            <ng-template #desactivado>
+                                <div class="row  gx-5 ">
+                                    <h5 class="text-center">El pedido sera recogido en la tienda</h5>
+                                </div>
+                            </ng-template>
+    
+                        </div>
+    
+    
+                        <mat-action-row>
+                            <button mat-button color="primary" (click)="nextStep()">Siguiente paso</button>
+                        </mat-action-row>
+    
+                    </mat-expansion-panel>
+    
+    
+    
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <mat-checkbox class="example-margin" [disabled]="true"></mat-checkbox>
+    
+                                <label for="datos">Método de pago</label>
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Introduce los datos para realizar el pago
+                                <mat-icon>credit_card</mat-icon>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+    
+                        <div class="row mt-3">
+                            <mat-form-field class="col-12">
+                                <mat-label>Nombre del titular</mat-label>
+                                <input matInput placeholder="Nombre del titular" value="">
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Numero de la tarjeta</mat-label>
+                                <input matInput placeholder="1234123412341234" value="">
+                            </mat-form-field>
+                            <mat-form-field class=" col-12 col-lg-6">
+                                <mat-label>Fecha de expiracion</mat-label>
+                                <input matInput placeholder="MM/YY" value="">
+                            </mat-form-field>
+                            <mat-form-field class=" col-12 col-lg-6">
+                                <mat-label>CVV</mat-label>
+                                <input matInput placeholder="CVV" value="">
+                            </mat-form-field>
+    
+                        </div>
+    
+    
+                        <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                            <button mat-button color="primary" (click)="finalizarPedido()">End</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+    
+    
+    
+                </mat-accordion>
+            </div>
+        </div>
+        <mat-divider vertical style="width:auto" class="p-0 mb-5"></mat-divider>
+        <div class="mb-5 col-12 col-lg-6 row gx-5">
+            <div class="col-10 mx-auto pedido">
+                <h3 class="text-center m-3">Pedido</h3>
+                <mat-divider class="my-2"></mat-divider>
+                <div *ngFor="let producto of this.pedido" class="mb-2">
+                    <div class="d-flex justify-content-between">
+                        <p>x{{producto?.datosPedido?.cantidad}}  {{producto?.datosProducto?.nombre}}</p>
+                        <p>{{calcularPrecio(producto?.datosProducto?.precio,producto?.datosPedido?.cantidad)}}€</p>
+                    </div>
+                    <div *ngFor="let extras of producto.datosPedido.extras">
+                        <div class="d-flex justify-content-between">
+                            <p class="ms-4">-{{extras.nombre}}</p>
+                            <p>{{calcularPrecio(extras.precio,producto?.datosPedido?.cantidad)}}€</p>
+                        </div>
+                    </div>
+                </div>
+                <mat-divider class="my-4"></mat-divider>
+                <div class="d-flex justify-content-between mb-2">
+                    <h2>Total a pagar</h2>
+                    <h5>{{precioFinal}}€</h5>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <button mat-raised-button color="primary" (click)="finalizarPedido()">Finalizar Pago</button>
+        </div>
+    </div>
+</div>

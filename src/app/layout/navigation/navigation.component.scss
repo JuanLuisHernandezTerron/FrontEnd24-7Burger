@@ -1,0 +1,32 @@
+.row{
+    background-color: black;
+}
+header img{
+    width: 60%;
+}
+.cerrar-sesion{
+    border: 1px solid white;
+}
+
+.mat-badge.mat-badge{
+    color: #CEA174;
+}
+
+::ng-deep .mat-badge-content {
+    color: black !important; 
+    background: white !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+
+.mat-icon{
+    font-size: 38px;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.img-hamburguesa{
+    width: 10% !important;
+}
+

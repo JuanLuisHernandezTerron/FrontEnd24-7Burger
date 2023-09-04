@@ -1,0 +1,49 @@
+<div class="row burger">
+    <h1 class="col-12 mt-3 text-center">Contacto</h1>
+    <form [formGroup]="formularioContacto" (submit)="sendFormulario()">
+        <div class="row justify-content-center">
+            <mat-form-field class="col-12 col-lg-6 example-full-width burger-formulario mt-3">
+                <mat-label>Inserte Nombre</mat-label>
+                <input matInput placeholder="Pedro" formControlName="nombre">
+                <mat-error>Nombre es <strong>REQUERIDO</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-12 col-lg-6 example-full-width burger-formulario mt-3">
+                <mat-label>Inserte Apellidos</mat-label>
+                <input matInput placeholder="Alcalá Terrón" formControlName="apellidos">
+                <mat-error>Apellido es <strong>REQUERIDO</strong></mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row justify-content-center">
+            <mat-form-field class="col-12 example-full-width col-lg-6 mt-3">
+                <mat-label>Inserte Email</mat-label>
+                <input type="email" matInput placeholder="xxx@xxx.com" formControlName="email">
+                <mat-error>
+                    Email es <strong>REQUERIDO</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row justify-content-center">
+            <mat-form-field class="col-12 example-full-width col-lg-6 burger-formulario mt-3">
+                <mat-label>Inserte Telefono</mat-label>
+                <input type="number" matInput placeholder="123456789" formControlName="telefono">
+                <mat-error>Teléfono es <strong>REQUERIDO</strong></mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-12 example-full-width col-lg-6 burger-formulario mt-3">
+                <mat-label>Inserte Asunto</mat-label>
+                <input matInput placeholder="Mejora Servicio" formControlName="asunto">
+                <mat-error>Asunto es <strong>REQUERIDO</strong></mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row justify-content-center">
+            <mat-form-field class="col-12 example-full-width col-lg-6 mt-3">
+                <mat-label>Inserte Descripción</mat-label>
+                <textarea matInput placeholder="Escribe la duda que tengas.." formControlName="descripcion"></textarea>
+                <mat-error>Descripcion es <strong>REQUERIDO</strong></mat-error>
+            </mat-form-field>
+        </div>
+        <div class="my-auto text-center mx-auto col-lg-6  mt-3 mb-4">
+            <button class="burger-realizapedido mx-auto p-3 text-center">Enviar Consulta</button>
+        </div>
+    </form>
+</div>

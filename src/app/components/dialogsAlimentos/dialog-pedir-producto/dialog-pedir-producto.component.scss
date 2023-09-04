@@ -1,0 +1,61 @@
+.dialog{
+    &-hamburguesa{
+        overflow-x: hidden !important;
+        background-color: #DFCAB4;
+        
+    }
+
+    &-titulo{
+        @media(max-width:992px){
+            text-align: center !important;   
+        }
+    }
+
+    &-title{
+        @media(max-width:992px){
+            text-align: center !important;   
+        } 
+    }
+
+    &-precio{
+        @media(min-width:992px){
+            display: flex;
+            align-items: end;
+        } 
+    }
+
+    &-imagenLogo{
+        position: absolute;
+    }
+
+    &-title,&-descripcion{
+        font-weight: bold !important;
+        color: black;
+        text-align: justify;
+    }
+
+    &-descripcion{
+        @media(max-width:992px){
+            text-align: justify;
+        }
+    }
+
+    &-imagenProducto{
+        @media(max-width:992px){
+            text-align: center;
+            width: 50% !important;    
+        }
+    }
+}
+.alergenos img{
+    width: 36px !important;
+    
+    border-radius: 100%;
+    padding: 2px;
+}
+$colores: rgb(206, 146, 146), rgb(153, 214, 153), rgb(140, 140, 200),rgb(195, 140, 200),rgb(140, 200, 167),rgb(200, 140, 167),rgb(140, 200, 197),rgb(200, 160, 140);
+@for $i from 1 through length($colores) {
+    .alergenos:nth-child(#{$i}) img {
+      background-color: nth($colores, $i);
+    }
+  }

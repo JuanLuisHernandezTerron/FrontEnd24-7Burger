@@ -1,0 +1,28 @@
+<div class="container-fluid login" >
+    <div class="row pt-5">
+        <h1 class="text-center col-12 login-title mt-3 mb-5">Login</h1>
+    </div>
+    <div class="row col-xl-4 col-lg-5 col-md-7 col-sm-8 col-12 m-auto login-div">
+        <form [formGroup]="formGroupLogin" class="d-flex flex-column login-formulario" (submit)="sendLogin()">
+            <mat-form-field class="w-100 m-auto">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Introduzca Email" formControlName="email">
+                <mat-error>Email es <strong>REQUERIDO</strong></mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100 m-auto">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="password"
+                    placeholder="Introduzca Password" formControlName="contrasena">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide" type="button">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error>Contraseña es <strong>REQUERIDO</strong></mat-error>
+            </mat-form-field>
+            <div>
+
+            </div>
+            <button mat-raised-button class="m-auto mt-4 " color="primary">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>

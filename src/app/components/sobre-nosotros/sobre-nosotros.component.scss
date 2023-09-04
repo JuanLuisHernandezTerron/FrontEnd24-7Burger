@@ -1,0 +1,50 @@
+.sobreNosotros{
+    background-color: black;
+}
+h1{
+
+    color: #CEA174;
+}
+.burger{
+    text-align: center;
+    &-text{
+        color: white;
+
+        font-size: 20px;
+        &-titulo{
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+    &-ubicacion{
+        color: white;
+        
+        font-size: 15px;
+        
+    }
+}
+img{
+    width: 70%;
+}
+
+
+
+ @media only screen and (max-width: 576px ) {
+     iframe {
+       height: 300px;
+     }
+     .burger{
+        &-text{
+            font-size: 14px;
+            &-titulo{
+                font-size: 24px;
+            }
+        }
+        &-ubicacion{
+            font-size: 12px; 
+        }
+    }
+    img{
+        width: 80%;
+    }
+   }

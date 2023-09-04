@@ -1,0 +1,45 @@
+<div class="dialog-bebida">
+    <h1 mat-dialog-title align="center" class="mb-3">Modificar Producto</h1>
+    <mat-dialog-content>
+        <div class="row justify-content-end">
+            <img src="./../../../../assets/imagenes/logohamburguesaBlur.png"
+                class="img-fluid col-12 col-lg-6 col-xxl-4 dialog-imagenLogo" alt="logoEmpresa">
+        </div>
+        <form class="dialog-form container" [formGroup]="productoForm">
+            <div class="row">
+                <div class="col-12 row  justify-content-evenly align-items-center">
+
+                    <mat-form-field class="col-12 col-sm-8  col-lg-4">
+                        <mat-label>Nombre</mat-label>
+                        <input type="text" matInput formControlName="nombre" tabindex="0">
+                        <mat-error>Nombre es <strong>REQUERIDO</strong></mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="col-12 col-sm-8 col-lg-4" floatLabel="always">
+                        <mat-label >Precio</mat-label>
+                        <input matInput type="number" class="example-right-align precio text-end" placeholder="0" formControlName="precio">
+                        <span matTextSuffix class="ps-2">€&nbsp;</span>
+                        <mat-error>Precio es <strong>REQUERIDO</strong></mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 ">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img 
+                                id="img-bebida" class="img-fluid  dialog-productoPreview" srcset="">
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="button" color="primary" mat-raised-button (click)="fileInput.click()">Choose
+                                File</button>
+                            <input hidden (change)="previewIMG($event)" (change)="imagenesChange($event)"
+                                 #fileInput class="dialog-inputIMG" type="file" id="file">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions class="dialog-hamburguesa" align="center">
+        <button mat-raised-button [mat-dialog-close]="true" [disabled]="!productoForm.valid" (click)="modificarProducto()"
+            color="primary" class="confirmarBebida">Actualizar Producto</button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,32 @@
+<div id="container" class="container-fluid color-bg ">
+    <div class="row container mx-auto">
+        <div class="row d-flex justify-content-between align-items-end">
+            <div class="col-12 col-sm-6 d-inline-block  mt-5">
+                <div class=" volver d-inline-block" routerLink="/admin/dashboard">
+                    <mat-icon >
+                        <span class="mt-1 material-symbols-outlined">undo</span>
+                    </mat-icon>
+                    <p class="m-0 d-inline">Volver atrás</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row dashboard pb-5">
+        <div class="col-12 my-5">
+            <div class="row text-center justify-content-center">
+                <div class="col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3 color-card row m-5 py-3 card card-hamburguesa " routerLink="/admin/dashboard/productos/hamburguesas">
+                    <h3 class="color-text my-4">Hamburguesas</h3>
+                    <img class="mx-auto m-3" src="./../../../assets/imagenes/logo-hamburguesa.png" alt="logo Hamburguesas">
+                </div>
+                <div class=" col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3 color-card row m-5 py-3 card-bebidas  card" routerLink="/admin/dashboard/productos/bebidas">
+                    <h3 class="color-text my-4">Bebidas</h3>
+                    <img class="mx-auto m-3" src="./../../../assets/imagenes/logo-bebida.png" alt="logo Bebidas">
+                </div>
+                <div class=" col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3 color-card row m-5 py-3 card-postre  card" routerLink="/admin/dashboard/productos/postres">
+                    <h3 class="color-text my-4">Postres</h3>
+                    <img class="mx-auto m-3" src="./../../../assets/imagenes/logo-helado.png" alt="logo Postres">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

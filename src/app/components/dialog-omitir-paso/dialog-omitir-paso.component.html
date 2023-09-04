@@ -1,0 +1,12 @@
+
+<div class="dialog text-center">
+    <h1 mat-dialog-title class="mb-3">¿Estás seguro?</h1>
+    <div mat-dialog-content>
+      ¿Estás Seguro que desea seguir sin seleccionar alguna {{data}}?
+      
+    </div>
+    <div mat-dialog-actions class="justify-content-evenly mt-3">
+        <button mat-raised-button mat-dialog-close>Cerrar</button>
+        <button mat-raised-button color="warn" (click)="omitirPaso()" cdkFocusInitial>Aceptar</button>
+    </div>
+</div>

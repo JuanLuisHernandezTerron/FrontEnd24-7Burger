@@ -1,0 +1,41 @@
+.dashboard{
+    min-height: 80vh;
+}
+.color{
+    &-bg{
+        background-color: #CEA174;
+    }
+    &-text{
+        color: #CEA174;
+    }
+    &-card{
+        background-color: #000000;
+    }
+}
+img{
+    width: 60%;
+}
+.card{
+    &-hamburguesa,&-bebidas,&-postre{
+        transition: 0.3s ease-in-out;
+       &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+       } 
+    }
+    border-radius: 10%;
+    max-width: 350px;
+}
+@media (max-width:1100px) {
+    img{
+        img{
+            width: 70%;
+        }
+    }
+}
+.volver{
+    cursor: pointer;
+    &:hover{
+        color: white;
+    }
+}

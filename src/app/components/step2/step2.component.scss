@@ -1,0 +1,44 @@
+.pedido{
+    min-height: 80vh;
+}
+.hamburguesa-card{
+    border-radius: 10%;
+ background-color: black;
+ color: #CEA174;
+ max-width: 300px;
+ max-height: 350px;
+ min-height: 350px;
+}
+// .hamburguesa-precio{
+//     max-height: 44px;
+//     min-height: 44px;
+// }
+img{
+    width: 100%;
+    max-width: 130px;
+}
+// .descripcion{
+//     min-width: 90px;
+//     min-height: 80px;
+// }
+mat-divider{
+    background-color: #CEA174;
+    max-height: 0px;
+}
+
+.alergenos img{
+    width: 36px !important;
+    border-radius: 100%;
+    padding: 2px;
+}
+$colores: rgb(206, 146, 146), rgb(153, 214, 153), rgb(140, 140, 200),rgb(195, 140, 200),rgb(140, 200, 167),rgb(200, 140, 167),rgb(140, 200, 197),rgb(142, 200, 140);
+@for $i from 1 through length($colores) {
+    .alergenos:nth-child(#{$i}) img {
+      background-color: nth($colores, $i);
+    }
+  }
+  #burguerVacia{
+    width: 130px !important;
+    height: 130px !important;
+    padding: 0%;
+  }

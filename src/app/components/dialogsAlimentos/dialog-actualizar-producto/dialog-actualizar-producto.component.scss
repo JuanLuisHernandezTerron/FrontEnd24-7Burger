@@ -1,0 +1,72 @@
+.dialog{
+    &-hamburguesa{
+        background-color: #DFCAB4;
+        
+    }
+
+    &-imagenLogo{
+        position: absolute;
+        z-index: 1;
+    }
+
+    &-inputIMG{
+        background-color: #DFCAB4;
+    }
+    &-productoPreview{
+        border-radius: 50px;
+    }
+    &-form{
+        position: relative;
+        z-index: 1;
+    }
+    &-textArea{
+        height: 150px !important;
+    }
+    &-scrollExtras{
+        overflow: hidden !important;
+    }
+}
+#img-hamburguesa{
+    min-width: 200px !important;
+        max-width: 300px !important;
+}
+
+.file-name {
+    margin-left: 1rem; /* or whatever margin you require */
+}
+.confirmarBurger{
+    color: #cea174 ;
+    font-weight: bold;
+    &:disabled{
+        color: black;
+        background-color: rgb(192, 192, 192);
+    }
+}
+mat-icon{
+    cursor: pointer;
+}
+mat-form-field{
+    font-size: 1rem;
+}
+
+.precio{
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+        display: none;
+    }
+}
+
+.alergenos img{
+    width: 36px !important;
+    border-radius: 100%;
+    padding: 2px;
+}
+.opacity{
+    opacity: 0.5;
+}
+
+$colores: rgb(206, 146, 146), rgb(153, 214, 153), rgb(140, 140, 200),rgb(195, 140, 200),rgb(140, 200, 167),rgb(200, 140, 167),rgb(140, 200, 197),rgb(200, 160, 140);
+@for $i from 1 through length($colores) {
+    .alergenos:nth-child(#{$i}) img {
+      background-color: nth($colores, $i);
+    }
+  }

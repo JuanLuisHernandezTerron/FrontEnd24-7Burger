@@ -1,0 +1,179 @@
+<div class="container-fluid pedido p-0">
+    <mat-drawer-container class="example-container p-0 pedido-drawer" autosize>
+        <mat-drawer #drawer position="end" mode="push">
+            <ng-container *ngIf="this.productos !== 0 else carritoVacio">
+                <div class="row justify-content-center" *ngFor="let producto of this.CarritoAUX">
+                    <mat-card class="col-10 mt-3 mb-3">
+                        <div class="row">
+                            <div class="col-4 d-flex justify-content-center">
+                                <img src="{{producto.datosProducto.imagen}}" class="img-fluid pedido-imagen m-auto w-50"
+                                    alt="imagenAlimento">
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex flew-row justify-content-between">
+                                    <h5 class="mt-1">{{producto.datosProducto.nombre}}</h5>
+                                    <mat-icon class="mt-1" (click)="eliminarProductoCarrito(producto)">delete</mat-icon>
+                                </div>
+                                <div class="row align-items-center justify-content-around">
+                                    <ngx-number-spinner [value]="producto.datosPedido?.cantidad" [min]="1"
+                                        class="col-12 col-xl-6"
+                                        (change)="modificarValorProducto(producto.datosPedido,$event)">
+                                    </ngx-number-spinner>
+                                    <span
+                                        class=" pedido-drawer-precio col-12 col-xl-6 text-center">{{producto.datosProducto.precio}}€
+                                        / Unidad</span>
+                                </div>
+                                <div class="row">
+                                <ng-container *ngIf="producto?.datosProducto?.tipoAlimento != 'Bebida' else sinExtras">
+                                    <p class="mb-0 col-12">Extras:</p>
+                                </ng-container>
+                                    <div class="row mt-xl-1" *ngFor="let extras of producto?.datosPedido?.extras">
+                                        <div class="col-6 text-center">
+                                            <span class="ms-xl-3">{{extras.nombre}}</span>
+                                        </div>
+                                        <div class="col-1 d-flex align-items-center">
+                                            <span class="d-none d-xl-block">-</span>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-center">
+                                            <span class="pedido-drawer-precio">{{extras.precio}} €</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                    <mat-divider class="w-75 mb-2"></mat-divider>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row justify-content-center">
+                    <div class="col-12 row mt-2 justify-content-center">
+                        <h5 class="col-6 pedido-drawer-finalPrice">Productos</h5>
+                        <span class="col-6 w-25 pedido-drawer-productos">{{this.productos}}</span>
+                    </div>
+                    <div class="col-12 row mt-2 justify-content-center">
+                        <h4 class="ms-1 ms-lg-5 col-6 mt-1 pedido-drawer-finalPrice">Total (IVA Incluido)</h4>
+                        <span class="col-6 w-25 pedido-drawer-finalPrice me-lg-5">{{this.precio}} €</span>
+                    </div>
+                </div>
+            </ng-container>
+        </mat-drawer>
+        <div>
+            <mat-stepper class="pedido" [linear]="false" #stepper [labelPosition]="'bottom'" (selectionChange)="onStepChanged($event)">
+                <mat-step [completed]="step1" [editable]="isEditable">
+                    <ng-template matStepLabel>
+                        <span class="material-symbols-outlined">
+                            local_mall
+                        </span>
+                        <h4 class="d-inline mx-1">/</h4>
+                        <span class="material-symbols-outlined">
+                            store
+                        </span>
+                    </ng-template>
+                    <app-step1></app-step1>
+                </mat-step>
+                <mat-step [editable]="isEditable">
+                    <div class="d-flex container justify-content-between mt-4">
+
+                        <div class="d-inline-block ms-5" mat-button matStepperPrevious type="button">
+                            <button class="volver" mat-button matStepperPrevious>
+                                <span class="material-symbols-outlined">
+                                    arrow_back
+                                </span>
+                                <h6><u>Volver</u></h6>
+                            </button>
+
+                        </div>
+
+                        <div class="d-inline-block me-5" (click)="nextStep('Hamburguesa')" type="button">
+                            <div class="d-flex">
+                                <h6><u>Siguiente paso</u></h6>
+                                <span class="material-symbols-outlined">
+                                    arrow_forward
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <ng-template matStepLabel>
+                        <span class="material-symbols-outlined">
+                            lunch_dining
+                        </span>
+                    </ng-template>
+                    <app-step2></app-step2>
+                </mat-step>
+                <mat-step [editable]="isEditable">
+                    <div class="d-flex container justify-content-between mt-4">
+
+                        <div class="d-inline-block ms-5" mat-button matStepperPrevious type="button">
+                            <button class="volver" mat-button matStepperPrevious>
+                                <span class="material-symbols-outlined">
+                                    arrow_back
+                                </span>
+                                <h6><u>Volver</u></h6>
+                            </button>
+
+                        </div>
+
+                        <div class="d-inline-block me-5" (click)="nextStep('Bebida')" type="button">
+                            <div class="d-flex">
+                                <h6><u>Siguiente paso</u></h6>
+                                <span class="material-symbols-outlined">
+                                    arrow_forward
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <ng-template matStepLabel>
+                        <span class="material-symbols-outlined">
+                            sports_bar
+                        </span>
+                    </ng-template>
+                    <app-step3></app-step3>
+
+
+                </mat-step>
+                <mat-step [editable]="isEditable">
+                    <div class="d-flex container justify-content-between mt-4">
+
+                        <div class="d-inline-block ms-5" mat-button matStepperPrevious type="button">
+                            <button class="volver" mat-button matStepperPrevious>
+                                <span class="material-symbols-outlined">
+                                    arrow_back
+                                </span>
+                                <h6><u>Volver</u></h6>
+                            </button>
+                        </div>
+
+                        <div class="d-inline-block me-5" routerLink="/pago" (click)="ordenarPedido()" type="button">
+                            <div class="d-flex">
+                                <h6><u>Finalizar pedido</u></h6>
+                                <span class="material-symbols-outlined">
+                                    arrow_forward
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <ng-template matStepLabel>
+                        <span class="material-symbols-outlined">
+                            icecream
+                        </span>
+                    </ng-template>
+                    <app-step4></app-step4>
+                </mat-step>
+                
+            </mat-stepper>
+        </div>
+    </mat-drawer-container>
+
+</div>
+<ng-template #carritoVacio>
+    <div class="row justify-content-center mx-auto">
+        <h1 class="text-center mt-5">¡Tu carrito está VACÍO!</h1>
+        <img src="./../../../assets/imagenes/3144456.png" class="w-25 img-fluid mt-3" alt="Carrito Compra">
+    </div>
+</ng-template>
+<ng-template #sinExtras>
+    <p></p>
+</ng-template>

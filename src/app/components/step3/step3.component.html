@@ -1,0 +1,23 @@
+<div class="container-fluid pedido">
+    
+    <div class="row mt-5  mx-auto">
+        
+        <div class="col-12  row justify-content-center">
+            <div type="button" class="justify-content-center mx-4 bebida-card mb-3 text-center row" *ngFor="let bebida of arrBebidas">
+                <div class="col-10 mt-3 mx-auto ">
+                   <h5>{{bebida.nombre}}</h5>
+                </div>   
+                <div>
+                   <img id={{bebida._id}} src="{{bebida.imagen}}" alt="la 33">
+                </div>
+                <div class="d-flex justify-content-center align-items-start">
+                  <ngx-number-spinner color="primary" id="bebida._id" (change)="insertBebida(bebida._id,$event)" [value]="0" [min]="0" class="col-12 col-xl-6"> </ngx-number-spinner>
+                </div>
+                
+                <div class="d-flex justify-content-center align-items-start">
+                   <h5 class="my-2 "> {{bebida.precio}} €</h5>  
+                </div>
+             </div>
+        </div>
+    </div>
+ </div>

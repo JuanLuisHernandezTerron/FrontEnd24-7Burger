@@ -1,0 +1,23 @@
+.bebidas{
+    background-color: #CEA174;
+    min-height: 80vh;
+    &-volver{
+        cursor: pointer;
+        &:hover{
+            color: white;
+        }
+    }
+}
+button span, button {
+    color: #cea174 !important;
+}
+.bebidas-card{
+    border-radius: 10%;
+ background-color: black;
+ color: #CEA174;
+ max-width: 300px;
+}
+img{
+    width: 100%;
+    max-width: 200px;
+}

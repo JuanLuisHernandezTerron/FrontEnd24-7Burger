@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: 'Fuente';
+    src: url('./assets/fonts/Quantico-Regular.ttf') format("opentype");
+}
+
+h1,h2,h3,h4, h5,h6, p,button{
+    font-family: "Fuente" !important;
+}
+h1{
+    font-size: 30px !important;
+    font-weight: bold !important;
+}
+h2{
+    font-size: 28px !important;
+    font-weight: bold !important;
+}
+h3{
+    font-size: 26px !important;
+    font-weight: bold !important;
+}
+h4{
+    font-size: 24px !important;
+    font-weight: bold !important;
+}
+h5{
+    font-size: 22px !important;
+    font-weight: bold !important;
+}
+h6{
+    font-size: 16px !important;
+
+}
+p{
+    font-size: 14px !important;
+}
+
+.toast-bootstrap-compatibility-fix {
+    opacity:1;
+  }

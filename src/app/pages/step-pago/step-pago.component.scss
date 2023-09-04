@@ -1,0 +1,37 @@
+
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+
+
+.pago{
+    background-color:  #CEA174;
+    min-height: 80vh;
+}
+
+.mat-expansion-panel-header {
+    background-color: black !important;
+    color: white !important;
+  }
+.mat-expansion-panel{
+    background-color: rgb(224, 224, 224) !important;
+
+}
+.mat-expansion-panel-header-title,.mat-expansion-panel-header-description, ::ng-deep .mat-expansion-indicator::after {
+    color: white !important;
+}
+
+.mat-mdc-checkbox.mat-primary{
+    --mdc-checkbox-disabled-selected-icon-color:#CEA174;
+    --mdc-checkbox-disabled-unselected-icon-color: #CEA174;
+}
+
+.pedido {
+  border:1px solid black;
+  border-radius: 20px; 
+}
+

@@ -1,0 +1,18 @@
+.banner1{
+    background-color: black;
+
+}
+img{
+    width: 100%;
+}
+.realizapedido{
+    color: #CEA174;
+    background-color: black;
+    border: 2px solid #CEA174;
+    border-radius: 10px;
+    font-size:x-large;
+    &:hover{
+        background-color: #CEA174;
+        color: black;
+    }
+}

@@ -1,0 +1,56 @@
+.dialog{
+    &-bebida{
+        background-color: #DFCAB4;
+        
+    }
+
+    &-imagenLogo{
+        position: absolute;
+        z-index: 1;
+        max-width: 460px !important;
+    }
+
+    &-inputIMG{
+        background-color: #DFCAB4;
+    }
+    &-productoPreview{
+        border-radius: 50px;
+    }
+    &-form{
+        position: relative;
+        z-index: 1;
+    }
+    &-textArea{
+        height: 150px !important;
+    }
+    &-scrollExtras{
+        overflow: hidden !important;
+    }
+}
+#img-bebida{
+    min-width: 200px !important;
+    max-width: 300px !important;
+}
+
+.file-name {
+    margin-left: 1rem; /* or whatever margin you require */
+}
+.confirmarBebida{
+    color: #cea174 ;
+    font-weight: bold;
+    &:disabled{
+        color: black;
+        background-color: rgb(192, 192, 192);
+    }
+}
+mat-icon{
+    cursor: pointer;
+}
+mat-form-field{
+    font-size: 1rem;
+}
+.precio{
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+        display: none;
+    }
+}

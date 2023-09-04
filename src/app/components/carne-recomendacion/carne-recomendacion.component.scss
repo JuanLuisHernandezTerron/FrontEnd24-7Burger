@@ -1,0 +1,19 @@
+.burger{
+    &-text{
+        text-align: justify;
+        font-size: 20px;
+        &-titulo{
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+    &-img{
+
+        max-width: 600px;
+        @media (min-width: 990px){
+            width: 100% !important;
+        }
+    }
+
+}

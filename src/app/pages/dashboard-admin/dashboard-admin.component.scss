@@ -1,0 +1,39 @@
+.dashboard{
+    min-height: 80vh;
+}
+.color{
+    &-bg{
+        background-color: #CEA174;
+    }
+    &-text{
+        color: #CEA174;
+    }
+    &-card{
+        background-color: #000000;
+    }
+}
+
+.card{
+    &-pedidos,&-productos{
+        transition: 0.3s ease-in-out;
+       &:hover{
+        transform: scale(1.1);
+       } 
+    }
+}
+
+img{
+    width: 60%;
+}
+.card{
+    border-radius: 10%;
+    max-width: 300px;
+    cursor: pointer;
+}
+@media (max-width:1100px) {
+    img{
+        img{
+            width: 70%;
+        }
+    }
+}

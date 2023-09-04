@@ -1,0 +1,65 @@
+.pedido{
+    &-drawer{
+        &-precio{
+            font-weight: bold;
+        }
+        &-finalPrice{
+            font-weight: bold;
+            font-size: 18px !important;
+        }
+        &-productos{
+            font-size: 18px;
+        }
+        &-imagen{
+            @media (max-width:950px){
+                width: 100% !important;
+            }
+        
+            @media (min-width:951px){
+                width: 40% !important;
+            }
+        }
+    }
+    background-color:  #CEA174;
+}
+
+::ng-deep .mat-horizontal-stepper-header {
+    pointer-events: none !important;
+}
+
+::ng-deep .mat-drawer-inner-container{
+    // overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+::ng-deep .mat-drawer.mat-drawer-push{
+    @media (max-width:993px){
+        width: 80% !important;
+    }
+
+    @media (min-width:769px){
+        width: 50% !important;
+    }
+
+    @media (min-width:992px){
+        width: 25% !important;
+    }
+}
+
+@media (min-width:992px) {
+    ::ng-deep .mat-horizontal-stepper-header-container{
+        margin-left: 30% !important;
+        margin-right: 30%  !important;
+    }
+}
+
+::ng-deep .mat-drawer-content{
+    margin-right: -30px !important;
+}
+
+.mat-drawer.mat-drawer-push{
+    background-color: #e8ccaf;
+}
+::ng-deep .mdc-button__label{
+    display: flex !important;
+}

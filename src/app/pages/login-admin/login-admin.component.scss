@@ -1,0 +1,36 @@
+.login{
+    background-color: black;
+    min-height: 80vh;
+    &-title{
+        color: #CEA174;
+    }
+    &-formulario{
+        border: 2px solid #CEA174;
+        border-radius: 15px;
+        padding: 60px;
+    }
+    &-div{
+        max-width: 500px;
+    }
+}
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #CEA174 !important;
+    width: 50% !important;
+
+}
+
+.mat-mdc-checkbox.mat-accent{
+    --mdc-checkbox-selected-icon-color: #CEA174 !important;
+    --mdc-checkbox-selected-hover-icon-color: #CEA174 !important;
+    --mdc-checkbox-selected-pressed-icon-color:#CEA174 !important;
+    --mdc-checkbox-selected-focus-icon-color: #CEA174 !important;
+}
+
+.mat-mdc-raised-button:not(:disabled){
+    color: black !important;
+}
+
+.material-icons{
+    font-family: 'Material Icons' !important;
+}
