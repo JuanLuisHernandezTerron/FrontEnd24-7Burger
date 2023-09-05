@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import Parallax from 'parallax-js'
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ProductoService } from 'src/app/services/productos/producto.service';
 import { PedidoService } from 'src/app/services/pedidos/pedido.service';
@@ -31,7 +30,7 @@ export class NavigationComponent {
   }
 
   navegationPedido(){
-   return (window.location.href.split('/')[3] == "pedido") ? true : false; 
+   return (window.location.href.split('/')[2] == "pedido") ? true : false; 
   }
 
   abrirCarrito(){
