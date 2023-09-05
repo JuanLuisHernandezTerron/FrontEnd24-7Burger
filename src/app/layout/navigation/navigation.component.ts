@@ -30,6 +30,8 @@ export class NavigationComponent {
   }
 
   navegationPedido(){
+    console.log(window.location.href.split('/'));
+    
    return (window.location.href.split('/')[2] == "pedido") ? true : false; 
   }
 
