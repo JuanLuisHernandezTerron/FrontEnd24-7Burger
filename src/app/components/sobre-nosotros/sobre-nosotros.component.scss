@@ -1,50 +1,61 @@
-.sobreNosotros{
+.sobreNosotros {
     background-color: black;
 }
-h1{
+
+h1 {
 
     color: #CEA174;
 }
-.burger{
+
+.burger {
     text-align: center;
-    &-text{
+
+    &-text {
         color: white;
 
         font-size: 20px;
-        &-titulo{
+        text-align: justify;
+
+        &-titulo {
             font-size: 30px;
             font-weight: bold;
         }
     }
-    &-ubicacion{
+
+    &-ubicacion {
         color: white;
-        
+
         font-size: 15px;
-        
+
     }
 }
-img{
+
+img {
     width: 70%;
 }
 
 
 
- @media only screen and (max-width: 576px ) {
-     iframe {
-       height: 300px;
-     }
-     .burger{
-        &-text{
+@media only screen and (max-width: 576px) {
+    iframe {
+        height: 300px;
+    }
+
+    .burger {
+        &-text {
             font-size: 14px;
-            &-titulo{
+
+            &-titulo {
                 font-size: 24px;
             }
         }
-        &-ubicacion{
-            font-size: 12px; 
+
+        &-ubicacion {
+            font-size: 12px;
         }
     }
-    img{
+
+    img {
         width: 80%;
     }
-   }
+}

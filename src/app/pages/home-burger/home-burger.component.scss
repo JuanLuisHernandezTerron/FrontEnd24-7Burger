@@ -8,6 +8,9 @@ h3{
     transition: 0.3s ease-in-out;
     font-weight: bold;
     cursor: pointer;
+    @media(max-width:600px){
+        font-size: 20px !important;
+    }
 }
 h3:hover{
     color: white;
