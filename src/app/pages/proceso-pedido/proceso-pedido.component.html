@@ -72,7 +72,7 @@
                     <app-step1></app-step1>
                 </mat-step>
                 <mat-step [editable]="isEditable">
-                    <div class="d-flex container justify-content-between mt-4">
+                    <div class="d-flex container  justify-content-between align-items-center mt-4 ">
 
                         <div class="d-inline-block ms-5" mat-button matStepperPrevious type="button">
                             <button class="volver" mat-button matStepperPrevious>
@@ -81,16 +81,18 @@
                                 </span>
                                 <h6><u>Volver</u></h6>
                             </button>
-
+                            
                         </div>
-
-                        <div class="d-inline-block me-5" (click)="nextStep('Hamburguesa')" type="button">
+                        
+                        <div class="d-inline-block me-5" >
                             <div class="d-flex">
+                                
+                                <button class="volver" mat-button (click)="nextStep('Hamburguesa')">
                                 <h6><u>Siguiente paso</u></h6>
                                 <span class="material-symbols-outlined">
                                     arrow_forward
                                 </span>
-
+                            </button>
                             </div>
                         </div>
                     </div>
@@ -102,7 +104,7 @@
                     <app-step2></app-step2>
                 </mat-step>
                 <mat-step [editable]="isEditable">
-                    <div class="d-flex container justify-content-between mt-4">
+                    <div class="d-flex container justify-content-between align-items-center mt-4 ">
 
                         <div class="d-inline-block ms-5" mat-button matStepperPrevious type="button">
                             <button class="volver" mat-button matStepperPrevious>
@@ -111,16 +113,18 @@
                                 </span>
                                 <h6><u>Volver</u></h6>
                             </button>
-
+                            
                         </div>
-
-                        <div class="d-inline-block me-5" (click)="nextStep('Bebida')" type="button">
+                        
+                        <div class="d-inline-block me-5" >
                             <div class="d-flex">
+                                
+                                <button class="volver" mat-button (click)="nextStep('Bebida')">
                                 <h6><u>Siguiente paso</u></h6>
                                 <span class="material-symbols-outlined">
                                     arrow_forward
                                 </span>
-
+                            </button>
                             </div>
                         </div>
                     </div>

@@ -14,10 +14,13 @@
         @media (max-width:1100px) {
             width: 6.4%;
         }
+        @media (max-width:576px) {
+            width: 50px;
+        }
         &-advisor{
             width: 10%;
             @media (max-width:1100px) {
-                width: 6.4%;
+                width:20%;
             }
         }
     }
@@ -32,3 +35,16 @@ footer{
 .row{
     background-color: black;
 }
+
+@media screen and (max-width: 576px) {
+    img{
+        width: 50px;
+    }
+    .burger-logo{
+        width: 180px !important;
+    }
+    .burger-img-redes-advisor{
+        width: 200px;
+    }
+   
+  }

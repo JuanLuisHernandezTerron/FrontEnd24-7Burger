@@ -16,3 +16,11 @@ img{
         color: black;
     }
 }
+
+
+@media screen and (max-width: 576px) {
+    span{
+        font-size: 20px !important;
+    }
+    
+  }

@@ -63,3 +63,8 @@
 ::ng-deep .mdc-button__label{
     display: flex !important;
 }
+
+::ng-deep .mat-horizontal-stepper-header-container{
+    min-width: 200px;
+}
+

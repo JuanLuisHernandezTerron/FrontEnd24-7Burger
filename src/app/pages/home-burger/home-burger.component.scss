@@ -8,9 +8,9 @@ h3{
     transition: 0.3s ease-in-out;
     font-weight: bold;
     cursor: pointer;
-    @media(max-width:600px){
-        font-size: 20px !important;
-    }
+    // @media(max-width:600px){
+    //     font-size: 20px !important;
+    // }
 }
 h3:hover{
     color: white;
@@ -20,3 +20,18 @@ h3:hover{
 a{
   all:unset;  
 }
+
+@media screen and (max-width: 576px) {
+    h3{
+        font-size: 18px !important;
+    }
+
+    
+    
+  }
+@media screen and (max-width: 400px) {
+    h3{
+        font-size: 14px !important;
+    }
+   
+  }

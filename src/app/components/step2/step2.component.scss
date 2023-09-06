@@ -1,11 +1,13 @@
 .pedido{
     min-height: 80vh;
+
 }
 .hamburguesa-card{
     border-radius: 10%;
  background-color: black;
  color: #CEA174;
- max-width: 300px;
+ max-width: 280px;
+ min-width: 280px;
  max-height: 350px;
  min-height: 350px;
 }
@@ -15,7 +17,7 @@
 // }
 img{
     width: 100%;
-    max-width: 130px;
+    max-width: 120px;
 }
 // .descripcion{
 //     min-width: 90px;

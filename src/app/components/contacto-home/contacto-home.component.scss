@@ -27,3 +27,31 @@
 h1{
     font-size: 35px;
 }
+
+@media screen and (max-width: 576px) {
+    h1{
+        font-size: 22px !important;
+    }
+    h3{
+        font-size: 18px !important;
+
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    h1{
+        font-size: 18px !important;
+    }
+    h3{
+        font-size: 14px !important;
+
+    }
+   
+  }
+
+  @media screen and (max-width: 576px) {
+    span{
+        font-size: 18px !important;
+    }
+
+  }

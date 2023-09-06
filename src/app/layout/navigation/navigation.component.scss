@@ -29,4 +29,10 @@ header img{
 .img-hamburguesa{
     width: 10% !important;
 }
+@media screen and (max-width: 576px) {
+    img{
+        width: 180px !important;
+    }
+   
+  }
 

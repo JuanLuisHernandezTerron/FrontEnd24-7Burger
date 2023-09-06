@@ -44,7 +44,7 @@ img {
     .burger {
         &-text {
             font-size: 14px;
-
+            margin: 0;
             &-titulo {
                 font-size: 24px;
             }
@@ -59,3 +59,23 @@ img {
         width: 80%;
     }
 }
+@media screen and (max-width: 576px) {
+    h1{
+        font-size: 22px !important;
+    }
+    h3{
+        font-size: 18px !important;
+
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    h1{
+        font-size: 18px !important;
+    }
+    h3{
+        font-size: 14px !important;
+
+    }
+   
+  }
