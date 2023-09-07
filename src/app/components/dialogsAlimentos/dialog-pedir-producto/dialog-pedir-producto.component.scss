@@ -1,3 +1,9 @@
+::ng-deep .cdk-overlay-pane{
+    @media (max-width:650px){
+        width: 110% !important;
+    }
+}
+
 .dialog{
     &-hamburguesa{
         overflow-x: hidden !important;
