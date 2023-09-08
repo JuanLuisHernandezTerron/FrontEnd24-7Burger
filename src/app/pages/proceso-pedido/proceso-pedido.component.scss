@@ -2,10 +2,16 @@
     &-drawer{
         &-precio{
             font-weight: bold;
+            font-size: 15px;
+            outline: none;
+            box-shadow: none;
         }
         &-finalPrice{
             font-weight: bold;
             font-size: 18px !important;
+            @media (max-width: 429px){
+                font-size: 13px !important;
+            }
         }
         &-productos{
             font-size: 18px;
@@ -19,6 +25,9 @@
                 width: 40% !important;
             }
         }
+    }
+    &-extras{
+        font-size: 14px;
     }
     background-color:  #CEA174;
 }

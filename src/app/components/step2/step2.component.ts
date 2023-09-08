@@ -33,7 +33,8 @@ export class Step2Component {
         width: '60%',
         enterAnimationDuration,
         exitAnimationDuration,
-        data : evento.id
+        data : evento.id,
+        autoFocus: false
       });    
 
       this.dialogRefAnadir.afterClosed().subscribe(result => {

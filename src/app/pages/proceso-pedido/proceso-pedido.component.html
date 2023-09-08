@@ -28,14 +28,11 @@
                                     <p class="mb-0 col-12">Extras:</p>
                                 </ng-container>
                                     <div class="row mt-xl-1" *ngFor="let extras of producto?.datosPedido?.extras">
-                                        <div class="col-6 text-center">
-                                            <span class="ms-xl-3">{{extras.nombre}}</span>
+                                        <div class="col-8 col-md-9 text-center">
+                                            <span class="ms-xl-3 p-0 pedido-extras">{{extras.nombre}}</span>
                                         </div>
-                                        <div class="col-1 d-flex align-items-center">
-                                            <span class="d-none d-xl-block">-</span>
-                                        </div>
-                                        <div class="col-4 d-flex align-items-center">
-                                            <span class="pedido-drawer-precio">{{extras.precio}} €</span>
+                                        <div class="col-4 col-md-3 p-0 d-flex align-items-center">
+                                            <span class="pedido-extras">{{extras.precio}} €</span>
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +48,7 @@
                         <span class="col-6 w-25 pedido-drawer-productos">{{this.productos}}</span>
                     </div>
                     <div class="col-12 row mt-2 justify-content-center">
-                        <h4 class="ms-1 ms-lg-5 col-6 mt-1 pedido-drawer-finalPrice">Total (IVA Incluido)</h4>
+                        <h4 class=" ms-xl-5 col-6 mt-1 pedido-drawer-finalPrice">Total (IVA Incluido)</h4>
                         <span class="col-6 w-25 pedido-drawer-finalPrice me-lg-5">{{this.precio}} €</span>
                     </div>
                 </div>

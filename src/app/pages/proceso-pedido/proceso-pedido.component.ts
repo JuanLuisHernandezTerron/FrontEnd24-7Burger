@@ -225,7 +225,8 @@ export class ProcesoPedidoComponent implements OnInit {
       width: 'auto',
       enterAnimationDuration,
       exitAnimationDuration,
-      data: tipoAlimento
+      data: tipoAlimento,
+      autoFocus: false
     })
     this.dialogRefOmitir.afterClosed().subscribe(result => {
       if (result) {
