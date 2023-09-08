@@ -14,8 +14,8 @@
     
                                 <label for="datos">Datos cliente</label>
                             </mat-panel-title>
-                            <mat-panel-description>
-                                Introduce sus datos de contacto
+                            <mat-panel-description class="info">
+                                 <p class=" m-0">Introduce sus datos de contacto</p>
                                 <mat-icon>account_circle</mat-icon>
                             </mat-panel-description>
                         </mat-expansion-panel-header>
@@ -74,13 +74,14 @@
                     <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <mat-checkbox class="example-margin" [disabled]="true"></mat-checkbox>
+                                <mat-checkbox color="primary" class="example-margin" [disabled]="true"
+                                    [checked]="checkeado"></mat-checkbox>
     
                                 <label for="datos">Método de pago</label>
                             </mat-panel-title>
-                            <mat-panel-description>
-                                Introduce los datos para realizar el pago
-                                <mat-icon>credit_card</mat-icon>
+                            <mat-panel-description class="info">
+                                <p class="m-0">Introduce los datos para realizar el pago</p>
+                                <mat-icon >credit_card</mat-icon>
                             </mat-panel-description>
                         </mat-expansion-panel-header>
     

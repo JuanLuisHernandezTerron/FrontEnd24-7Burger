@@ -20,8 +20,8 @@
             <mat-card class="row mt-3 col-8 mb-3  text-center align-items-center m-auto justify-content-between" *ngFor="let datos of arrayPedidoEnEspera">
                 <div class="col-xl-6 col-12 row d-flex justify-content-center mx-auto">
                     <div class="row justify-content-between">
-                        <span class="d-inline-block">{{datos.datos_cliente.nombre}}</span>
-                        <span class="d-inline-block">{{datos._id}}</span>
+                        <span class="d-inline-block">Nº {{datos._id}} - {{datos.datos_cliente.nombre}}</span>
+                        <span class="d-inline-block">{{datos.datos_cliente.telefono}}</span>
                     </div>
                 </div>
                 <div class="col-xl-6 col-12 row pedidos-margin text-xl-end text-center mx-auto">
@@ -33,19 +33,17 @@
         </div>
         <div class="col-12 col-xl-6">
             <h3 class="text-center">En proceso</h3>
-            <mat-card class="row mt-3 col-8 mb-3 text-center align-items-center m-auto justify-content-between" *ngFor="let datos of arrayPedidoEnProceso">
-                <div class="col-12 col-xl-5 row d-flex ">
-                    <div class="row justify-content-center mx-auto">
-                        <span class="d-inline-block">{{datos.datos_cliente.nombre}}</span>
-                    </div>
-                    <div class="row">
-                        <span class="d-inline-block"> {{datos._id}}</span>
+            <mat-card class="row mt-3 col-8 mb-3 text-center align-items-center m-auto justify-content-between " *ngFor="let datos of arrayPedidoEnProceso">
+                <div class="col-12 col-xl-5 row d-flex mx-auto">
+                    <div class="row justify-content-between mx-auto">
+                        <span class="d-inline-block text-center">Nº {{datos._id}} - {{datos.datos_cliente.nombre}}</span>
+                        <span class="d-inline-block">{{datos.datos_cliente.telefono}}</span>
                     </div>
                 </div>
-                <div class="col-1 mx-auto">
+                <div class="col-12 col-md-1 mx-auto">
                     <mat-icon matTooltip="Volver a imprimir TICKET"
                         aria-label="Button that displays a tooltip when focused or hovered over"
-                        class="pedidos-volverNavigation me-5 mt-1" (click)="generadorPDF(datos)">print</mat-icon>
+                        class="pedidos-volverNavigation mx-auto mt-1" (click)="generadorPDF(datos)">print</mat-icon>
                 </div>
                 <div class="col-12 col-xl-6 row mx-auto">
                     <div class="  text-xl-end text-center">
